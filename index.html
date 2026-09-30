@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeAlpha Image Gallery</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Subtle paper texture overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Header Section with project information -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="edition-tag">CODEALPHA IMAGE GALLERY</div>
+      <div class="date-stamp">COLLECTION 2024 — 2026</div>
+    </div>
+
+    <div class="masthead-main">
+      <span class="sub-annotation">CodeAlpha Frontend Internship • Task 01</span>
+      <h1 class="title">CodeAlpha Image Gallery<em>.</em></h1>
+      <p class="manifesto">
+        A responsive photography gallery featuring categorized image filtering, smooth grid layout, and a full-screen lightbox modal.
+      </p>
+    </div>
+
+    <!-- Photography gear & film metadata bar -->
+    <div class="film-stock-strip">
+      <span class="stock-item"><i class="fa-solid fa-camera"></i> Leica M6 & Pentax 67</span>
+      <span class="stock-divider">•</span>
+      <span class="stock-item"><i class="fa-solid fa-film"></i> Kodak Portra 400 & Tri-X 400</span>
+      <span class="stock-divider">•</span>
+      <span class="stock-item"><i class="fa-solid fa-location-dot"></i> Kyoto • Florence • Highlands</span>
+    </div>
+  </header>
+
+  <!-- Category filter navigation buttons -->
+  <nav class="curation-bar" aria-label="Exhibition Filter">
+    <div class="curation-wrapper">
+      <span class="filter-lead">Exhibition Index:</span>
+      <div class="filter-chips">
+        <button class="filter-chip active" data-filter="all">
+          <span class="chip-index">00</span> All Frames
+        </button>
+        <button class="filter-chip" data-filter="nature">
+          <span class="chip-index">01</span> Wilderness & Mist
+        </button>
+        <button class="filter-chip" data-filter="city">
+          <span class="chip-index">02</span> Urban Solitude
+        </button>
+        <button class="filter-chip" data-filter="fauna">
+          <span class="chip-index">03</span> Quiet Creatures
+        </button>
+        <button class="filter-chip" data-filter="artifacts">
+          <span class="chip-index">04</span> Table & Hearth
+        </button>
+        <button class="filter-chip" data-filter="voyage">
+          <span class="chip-index">05</span> Drifting Elsewhere
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main photo grid -->
+  <main class="gallery-wrapper">
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- Photo 1: Wilderness (nature) -->
+      <article class="polaroid-card" data-category="nature" data-index="0">
+        <div class="mount-frame">
+          <div class="photo-container aspect-landscape">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Misty pine canopy at dawn" loading="lazy" />
+            <div class="frame-tag">FRAME 01A</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Himalayan Cedar Canopy</h3>
+            <p class="field-note">First light piercing fog through deodar needles. Damp earth & silent wind.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Portra 400</span>
+              <span class="lens-spec">50mm • ƒ/2.8 • 1/125s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 2: Urban (city) -->
+      <article class="polaroid-card" data-category="city" data-index="1">
+        <div class="mount-frame">
+          <div class="photo-container aspect-portrait">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" 
+                 alt="Tokyo rain soaked alleyway" loading="lazy" />
+            <div class="frame-tag">FRAME 02B</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Late Night Rain in Shinjuku</h3>
+            <p class="field-note">Wet asphalt reflecting neon lamps. Umbrella tucked under arm.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Cinestill 800T</span>
+              <span class="lens-spec">35mm • ƒ/1.4 • 1/60s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 3: Wilderness (nature) -->
+      <article class="polaroid-card" data-category="nature" data-index="2">
+        <div class="mount-frame">
+          <div class="photo-container aspect-square">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" 
+                 alt="Jagged alpine peaks during golden hour" loading="lazy" />
+            <div class="frame-tag">FRAME 03A</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Alpenglow on Mount Moran</h3>
+            <p class="field-note">Frozen lake reflections just before twilight turned deep indigo.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Ektar 100</span>
+              <span class="lens-spec">90mm • ƒ/8.0 • 1/30s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 4: Wildlife (fauna) -->
+      <article class="polaroid-card" data-category="fauna" data-index="3">
+        <div class="mount-frame">
+          <div class="photo-container aspect-portrait">
+            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800&q=80" 
+                 alt="Majestic lion resting in tall savannah grass" loading="lazy" />
+            <div class="frame-tag">FRAME 04C</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Sentinel at Dusk</h3>
+            <p class="field-note">Unblinking amber eyes through dry golden grasses of the Serengeti.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Kodak Gold 200</span>
+              <span class="lens-spec">135mm • ƒ/4.0 • 1/500s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 5: Food (artifacts) -->
+      <article class="polaroid-card" data-category="artifacts" data-index="4">
+        <div class="mount-frame">
+          <div class="photo-container aspect-landscape">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Wood fired artisan pizza on rustic baker table" loading="lazy" />
+            <div class="frame-tag">FRAME 05A</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Wood-Fired Sourdough & Basil</h3>
+            <p class="field-note">Charred blistered crust straight from brick oven in Naples.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Fuji Pro 400H</span>
+              <span class="lens-spec">45mm • ƒ/2.0 • 1/90s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 6: Travel (voyage) -->
+      <article class="polaroid-card" data-category="voyage" data-index="5">
+        <div class="mount-frame">
+          <div class="photo-container aspect-portrait">
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" 
+                 alt="Whitewashed village overlooking Aegean Sea" loading="lazy" />
+            <div class="frame-tag">FRAME 06B</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Oia's White Terraces</h3>
+            <p class="field-note">Limestone walls still retaining midday warmth as the sun dipped.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Kodak Tri-X</span>
+              <span class="lens-spec">28mm • ƒ/5.6 • 1/250s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 7: Skyline (city) -->
+      <article class="polaroid-card" data-category="city" data-index="6">
+        <div class="mount-frame">
+          <div class="photo-container aspect-landscape">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Moody Chicago skyline at blue hour" loading="lazy" />
+            <div class="frame-tag">FRAME 07A</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Monoliths in Blue Mist</h3>
+            <p class="field-note">Steel and stone vanishing into low autumn clouds over Lake Michigan.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Ilford HP5 Plus</span>
+              <span class="lens-spec">50mm • ƒ/4.0 • 1/60s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 8: Wildlife (fauna) -->
+      <article class="polaroid-card" data-category="fauna" data-index="7">
+        <div class="mount-frame">
+          <div class="photo-container aspect-square">
+            <img src="https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=900&q=80" 
+                 alt="Gentle African elephant walking through acacia brush" loading="lazy" />
+            <div class="frame-tag">FRAME 08D</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">The Matriarch's Path</h3>
+            <p class="field-note">Soft rhythmic footsteps kicking red dust into the evening backlight.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Portra 160</span>
+              <span class="lens-spec">105mm • ƒ/3.5 • 1/400s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 9: Travel (voyage) -->
+      <article class="polaroid-card" data-category="voyage" data-index="8">
+        <div class="mount-frame">
+          <div class="photo-container aspect-landscape">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Warm golden sunset hitting the Roman Colosseum arches" loading="lazy" />
+            <div class="frame-tag">FRAME 09A</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Flavian Ochre Ruins</h3>
+            <p class="field-note">Two thousand years of travertine limestone illuminated by Roman sunset.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Kodak Gold 200</span>
+              <span class="lens-spec">35mm • ƒ/5.6 • 1/125s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 10: Food (artifacts) -->
+      <article class="polaroid-card" data-category="artifacts" data-index="9">
+        <div class="mount-frame">
+          <div class="photo-container aspect-portrait">
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80" 
+                 alt="Minimal Japanese sashimi and nigiri presentation" loading="lazy" />
+            <div class="frame-tag">FRAME 10C</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Ginza Omakase Arrangement</h3>
+            <p class="field-note">Ceramic glaze made by Kyoto potters. Rice seasoned with aged red vinegar.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Fuji Velvia 50</span>
+              <span class="lens-spec">50mm Macro • ƒ/2.8 • 1/90s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 11: Wilderness (nature) -->
+      <article class="polaroid-card" data-category="nature" data-index="10">
+        <div class="mount-frame">
+          <div class="photo-container aspect-portrait">
+            <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80" 
+                 alt="Lush green waterfall cascading in deep ravine" loading="lazy" />
+            <div class="frame-tag">FRAME 11B</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Glen of the Weeping Moss</h3>
+            <p class="field-note">Long exposure on tripod set in freezing river pebbles. Isle of Skye.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Portra 400</span>
+              <span class="lens-spec">24mm • ƒ/11 • 2.5s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Photo 12: Wildlife (fauna) -->
+      <article class="polaroid-card" data-category="fauna" data-index="11">
+        <div class="mount-frame">
+          <div class="photo-container aspect-landscape">
+            <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Tiny vibrant kingfisher perched on a reed" loading="lazy" />
+            <div class="frame-tag">FRAME 12A</div>
+            <div class="view-indicator"><i class="fa-solid fa-arrow-up-right-from-square"></i> Inspect</div>
+          </div>
+          <div class="card-caption">
+            <h3 class="photo-title">Azure Kingfisher Waiting</h3>
+            <p class="field-note">Three hours motionless in lakeside reeds before it struck the water.</p>
+            <div class="technical-meta">
+              <span class="film-badge">Kodak Ektar 100</span>
+              <span class="lens-spec">200mm • ƒ/4.0 • 1/1000s</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Empty state message when no photos match the filter -->
+    <div class="empty-archive" id="emptyState" style="display:none;">
+      <div class="empty-icon"><i class="fa-solid fa-film"></i></div>
+      <h4>No Negatives Found</h4>
+      <p>There are no catalogued prints in this particular drawer yet.</p>
+    </div>
+  </main>
+
+  <!-- Lightbox modal for fullscreen image inspection -->
+  <dialog class="darkroom-modal" id="darkroomModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    
+    <div class="inspection-desk">
+      <!-- Toolbar: frame counter + close button -->
+      <div class="desk-toolbar">
+        <div class="archival-stamp">
+          <span class="stamp-pill">PROVING PRINT</span>
+          <span class="frame-index-counter" id="modalCounter">FRAME 01 OF 12</span>
+        </div>
+        <button class="desk-action-btn" id="modalCloseBtn" aria-label="Close Inspector">
+          <i class="fa-solid fa-xmark"></i> Close
+        </button>
+      </div>
+
+      <!-- Photo display with prev / next navigation -->
+      <div class="print-mat">
+        <button class="nav-paddle paddle-prev" id="prevFrameBtn" aria-label="Previous frame">
+          <i class="fa-solid fa-arrow-left-long"></i>
+        </button>
+
+        <div class="mounted-photograph">
+          <img src="" alt="" id="modalImage" />
+        </div>
+
+        <button class="nav-paddle paddle-next" id="nextFrameBtn" aria-label="Next frame">
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
+      </div>
+
+      <!-- Caption area: title, film stock, field notes, gear info -->
+      <div class="curator-notes">
+        <div class="notes-header">
+          <h2 class="inspection-title" id="modalTitle">Print Title</h2>
+          <span class="inspection-film" id="modalFilm">Film Stock</span>
+        </div>
+        <p class="inspection-handwriting" id="modalFieldNote">Photographer's field annotation</p>
+        <div class="notes-footer">
+          <span class="inspection-gear" id="modalGear">Gear Details</span>
+          <span class="inspection-keys">Use ← and → arrow keys to browse, Esc to close</span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Back to top button -->
+  <button class="return-seal" id="returnSeal" aria-label="Return to head of exhibition">
+    <i class="fa-solid fa-arrow-up"></i>
+    <span>TOP</span>
+  </button>
+
+  <!-- Page footer -->
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <div class="colophon-brand">
+        <h4 class="brand-serif">CodeAlpha Image Gallery</h4>
+        <p class="brand-note">A responsive photography gallery built for the CodeAlpha Frontend Internship.</p>
+      </div>
+      <div class="colophon-creds">
+        <p class="built-note">Carefully handcrafted for <strong>CodeAlpha Frontend Internship</strong> (Task 01)</p>
+        <p class="colophon-fineprint">Set in Newsreader, DM Sans & Caveat • Natural Pigment Chemistry • 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
